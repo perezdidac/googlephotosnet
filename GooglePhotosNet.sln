@@ -12,6 +12,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution 
 		stylecop.json = stylecop.json
 	EndProjectSection
 EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GooglePhotosNet.IntegrationTests", "GooglePhotosNet.IntegrationTests\GooglePhotosNet.IntegrationTests.csproj", "{14431755-7F59-4BCD-9EEC-DEEA8ED09BC1}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -26,6 +28,10 @@ Global
 		{905BCD95-D33F-430F-B9E8-52245B086B85}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{905BCD95-D33F-430F-B9E8-52245B086B85}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{905BCD95-D33F-430F-B9E8-52245B086B85}.Release|Any CPU.Build.0 = Release|Any CPU
+		{14431755-7F59-4BCD-9EEC-DEEA8ED09BC1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{14431755-7F59-4BCD-9EEC-DEEA8ED09BC1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{14431755-7F59-4BCD-9EEC-DEEA8ED09BC1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{14431755-7F59-4BCD-9EEC-DEEA8ED09BC1}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

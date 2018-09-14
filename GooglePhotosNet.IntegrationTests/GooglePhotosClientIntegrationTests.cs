@@ -1,4 +1,4 @@
-// <copyright file="GooglePhotosClientTests.cs" company="The Bald Labs">
+// <copyright file="GooglePhotosClientIntegrationTests.cs" company="The Bald Labs">
 // Copyright (c) The Bald Labs. All rights reserved.
 // </copyright>
 
@@ -9,19 +9,16 @@
 namespace TheBaldLabs.GooglePhotosNet.UnitTests
 {
     using System.Net.Http;
-    using Moq;
     using Xunit;
 
-    public class GooglePhotosClientTests
+    public class GooglePhotosClientIntegrationTests
     {
         private readonly GooglePhotosClient googlePhotosClient;
 
-        private readonly Mock<HttpClient> httpClient;
-
-        public GooglePhotosClientTests()
+        public GooglePhotosClientIntegrationTests()
         {
-            this.httpClient = new Mock<HttpClient>();
-            this.googlePhotosClient = new GooglePhotosClient(this.httpClient.Object);
+            HttpClient httpClient = new HttpClient();
+            this.googlePhotosClient = new GooglePhotosClient(httpClient);
         }
 
         [Fact]
