@@ -24,7 +24,7 @@ namespace TheBaldLabs.GooglePhotosNet.UnitTests
         [Fact]
         public void Test_ListAlbums_Succeeds()
         {
-            this.googlePhotosClient.ListAlbums();
+            ListAlbumsResponse listAlbumsResponse = this.googlePhotosClient.ListAlbums();
         }
     }
 }

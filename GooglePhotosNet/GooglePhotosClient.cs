@@ -11,6 +11,7 @@ namespace TheBaldLabs.GooglePhotosNet
     using System.Threading;
     using Google.Apis.Auth.OAuth2;
     using Google.Apis.Util.Store;
+    using Newtonsoft.Json;
 
     /// <summary>
     /// Client class to interact with the Google Photos Library API.
@@ -46,10 +47,16 @@ namespace TheBaldLabs.GooglePhotosNet
                     CancellationToken.None).Result;
             }
 
+            credential.RefreshTokenAsync(CancellationToken.None).Wait();
+
+            // Execute request
             HttpRequestMessage request = new HttpRequestMessage(HttpMethod.Get, ListAlbumsUrl);
             request.Headers.Authorization = new AuthenticationHeaderValue("Bearer", credential.Token.AccessToken);
             HttpResponseMessage response = this.httpClient.SendAsync(request).Result;
-            return new ListAlbumsResponse();
+
+            // Analyze response
+            string body = response.Content.ReadAsStringAsync().Result;
+            return JsonConvert.DeserializeObject<ListAlbumsResponse>(body);
         }
     }
 }
