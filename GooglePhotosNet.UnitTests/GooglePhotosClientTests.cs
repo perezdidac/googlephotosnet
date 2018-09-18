@@ -9,6 +9,7 @@
 namespace TheBaldLabs.GooglePhotosNet.UnitTests
 {
     using System.Net.Http;
+    using Google.Apis.Auth.OAuth2;
     using Moq;
     using Xunit;
 
@@ -17,11 +18,16 @@ namespace TheBaldLabs.GooglePhotosNet.UnitTests
         private readonly GooglePhotosClient googlePhotosClient;
 
         private readonly Mock<HttpClient> httpClient;
+        private readonly Mock<UserCredential> userCredential;
 
         public GooglePhotosClientTests()
         {
             this.httpClient = new Mock<HttpClient>();
-            this.googlePhotosClient = new GooglePhotosClient(this.httpClient.Object);
+            this.userCredential = new Mock<UserCredential>();
+            GooglePhotosClientSettings clientSettings = new GooglePhotosClientSettings(
+                this.httpClient.Object,
+                this.userCredential.Object);
+            this.googlePhotosClient = new GooglePhotosClient(clientSettings);
         }
 
         [Fact]
